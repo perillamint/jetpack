@@ -146,6 +146,7 @@ class Jetpack_XMLRPC_Server {
 		}
 
 		$secrets = Jetpack_Options::get_option( $action );
+
 		if ( !$secrets || is_wp_error( $secrets ) ) {
 			Jetpack_Options::delete_option( $action );
 			return $this->error( new Jetpack_Error( 'verify_secrets_missing', 'Verification took too long', 400 ) );
